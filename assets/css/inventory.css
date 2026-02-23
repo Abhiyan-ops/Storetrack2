@@ -1,0 +1,256 @@
+/* ============================================================
+   Inventory Page — matches dashboard style exactly
+   ============================================================ */
+
+
+   /* ── Add Item Section ── */
+
+   
+.inv-add-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.inv-add-icon {
+    width: 36px;
+    height: 36px;
+    background: #2563EB;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.inv-add-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #0F172A;
+}
+
+/* ── Form Row ── */
+.inv-form {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.inv-input {
+    flex: 1;
+    min-width: 120px;
+    padding: 10px 14px;
+    border: 1.5px solid #E8ECF0;
+    border-radius: 8px;
+    font-size: 13px;
+    font-family: 'Inter', sans-serif;
+    color: #0F172A;
+    background: #F4F6F8;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.inv-input:focus {
+    border-color: #2563EB;
+    box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+    background: white;
+}
+
+.inv-input::placeholder { color: #94A3B8; }
+
+.inv-select { cursor: pointer; }
+
+.inv-add-btn {
+    padding: 10px 24px;
+    background: #2563EB;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+}
+
+.inv-add-btn:hover {
+    background: #1D4ED8;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(37,99,235,0.25);
+}
+
+/* ── Search Card ── */
+.inv-search-card {
+    background: white;
+    border: 1px solid #E8ECF0;
+    border-radius: 10px;
+    padding: 12px 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    transition: border-color 0.2s;
+}
+
+.inv-search-card:focus-within {
+    border-color: #2563EB;
+    box-shadow: 0 0 0 3px rgba(37,99,235,0.08);
+}
+
+.inv-search-input {
+    border: none;
+    outline: none;
+    font-size: 13px;
+    font-family: 'Inter', sans-serif;
+    color: #0F172A;
+    background: transparent;
+    width: 100%;
+}
+
+.inv-search-input::placeholder { color: #94A3B8; }
+
+/* ── Items Badge ── */
+.items-badge {
+    font-size: 12px;
+    font-weight: 600;
+    background: #EFF6FF;
+    color: #2563EB;
+    padding: 4px 12px;
+    border-radius: 50px;
+}
+
+/* ── Category Badge ── */
+.cat-badge {
+    display: inline-block;
+    background: #F1F5F9;
+    color: #475569;
+    padding: 3px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+/* ── Stock Badge ── */
+.stock-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 13px;
+    color: white;
+}
+
+.stock-ok  { background: #22C55E; }
+.stock-low { background: #EF4444; }
+
+/* ── Margin Badge ── */
+.margin-badge {
+    display: inline-block;
+    color: #16A34A;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+/* ── Action Buttons ── */
+.action-cell { display: flex; align-items: center; gap: 6px; }
+
+.btn-edit,
+.btn-delete {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.btn-edit   { background: transparent; color: #EA580C; }
+.btn-delete { background: transparent; color: #94A3B8; }
+
+.btn-edit:hover   { background: #FFF7ED; color: #C2410C; }
+.btn-delete:hover { background: #FEE2E2; color: #DC2626; }
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .inv-form { flex-direction: column; }
+    .inv-input, .inv-add-btn { width: 100%; flex: unset; }
+    .data-table { min-width: 600px; }
+    .section-card { overflow-x: auto; }
+}
+
+/* ── Success / Error Messages ── */
+.msg-success {
+    background: #F0FDF4;
+    border: 1px solid #BBF7D0;
+    border-left: 4px solid #16A34A;
+    color: #15803D;
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.msg-error {
+    background: #FEF2F2;
+    border: 1px solid #FECACA;
+    border-left: 4px solid #EF4444;
+    color: #DC2626;
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* ── Cancel Edit Button ── */
+.cancel-edit-btn {
+    margin-left: auto;
+    font-size: 12px;
+    font-weight: 600;
+    color: #64748B;
+    background: #F1F5F9;
+    border: 1px solid #E2E8F0;
+    padding: 5px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.15s;
+}
+
+.cancel-edit-btn:hover {
+    background: #FEE2E2;
+    color: #DC2626;
+    border-color: #FECACA;
+}
+
+/* ── Search Clear Button ── */
+.search-clear {
+    font-size: 12px;
+    font-weight: 600;
+    color: #94A3B8;
+    text-decoration: none;
+    white-space: nowrap;
+    padding: 3px 8px;
+    border-radius: 4px;
+    transition: all 0.15s;
+}
+
+.search-clear:hover { color: #EF4444; background: #FEF2F2; }
+
+/* ── Empty State ── */
+.empty-state {
+    text-align: center;
+    padding: 48px 20px;
+}
